@@ -541,7 +541,6 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   padding: 100px 80px;
   text-align: center;
   scroll-margin-top: 80px;
-  min-height: 100vh;
 }
 .footer-cta .section-tag { justify-content: center; color: var(--gold); }
 .footer-cta .section-tag::after { background: var(--gold); }
@@ -751,50 +750,48 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   }
 
 }
-/* FIX CONTACT SECTION VISIBILITY */
-/* CONTACT SECTION FIX */
-.footer-cta {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-sub {
-  margin: 0 auto 44px;
-}
+/* ===== CONTACT SECTION FINAL FIX ===== */
 
 #contact {
-  scroll-margin-top: 120px;
   background: var(--ink);
   color: var(--cream);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 100vh;
   width: 100%;
+  min-height: auto;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
 
   position: relative;
-  z-index: 10;
+  z-index: 5;
+
+  overflow: visible;
 }
 
 .footer-cta {
-  opacity: 1 !important;
+  display: block !important;
   visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .contact-box,
-.footer-contacts,
+.post-send-box,
+.footer-contacts {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer-title,
 .footer-sub,
 .section-tag {
-  display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 </style>
 </head>

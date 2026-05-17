@@ -660,6 +660,95 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   .wins-grid { grid-template-columns: 1fr; }
   .footer-contacts { flex-direction: column; gap: 16px; align-items: center; }
 }
+/* ===== MOBILE FIXES ===== */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 14px 16px;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .hero-left,
+  .hero-right,
+  section,
+  .footer-cta {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .hero-name {
+    font-size: 52px !important;
+    line-height: 1;
+  }
+
+  .hero-title {
+    font-size: 16px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-stats-grid,
+  .impact-grid,
+  .platform-cards,
+  .wins-grid,
+  .community-grid,
+  .tools-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-card,
+  .impact-block,
+  .platform-card,
+  .win-card,
+  .tool-group {
+    width: 100%;
+  }
+
+  .post-metrics {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .timeline {
+    margin-left: 10px;
+    padding-left: 20px;
+  }
+
+  .timeline-item::before {
+    left: -30px;
+  }
+
+  .footer-title {
+    font-size: 48px !important;
+  }
+
+  .footer-contacts {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+}
 </style>
 </head>
 <body>

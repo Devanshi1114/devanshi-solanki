@@ -534,8 +534,6 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   .contact-field-group { grid-template-columns: 1fr; }
 }
 
-.post-send-box[hidden] { display: none !important; }
-
 /* ───────── FOOTER CTA ───────── */
 .footer-cta {
   background: var(--ink);
@@ -1238,7 +1236,7 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   </div>
 
   <!-- POST-SEND STATE (hidden initially) -->
-  <div class="post-send-box" id="postSendBox" style="display:none !important;" hidden>
+  <div class="post-send-box" id="postSendBox" style="display:none;">
     <div class="post-send-icon">✓</div>
     <div class="post-send-title">Message Sent!</div>
     <p class="post-send-sub">Thank you for reaching out! Devanshi will get back to you shortly.</p>
@@ -1304,15 +1302,20 @@ const statsObserver = new IntersectionObserver((entries) => {
 function showSuccess() {
   const box = document.getElementById('contactBox');
   const success = document.getElementById('postSendBox');
-  box.style.display = 'none';
-  success.removeAttribute('hidden');
-  success.style.cssText = 'display:block; opacity:0; transform:translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease;';
-  // Force reflow so transition triggers
-  success.getBoundingClientRect();
-  success.style.opacity = '1';
-  success.style.transform = 'translateY(0)';
-}
 
+  box.style.display = 'none';
+  success.style.display = 'block';
+
+  success.style.opacity = '0';
+  success.style.transform = 'translateY(20px)';
+  success.style.transition =
+    'opacity 0.5s ease, transform 0.5s ease';
+
+  setTimeout(() => {
+    success.style.opacity = '1';
+    success.style.transform = 'translateY(0)';
+  }, 50);
+}
 // ── Send Mail via Formspree ──
 async function handleSendMail() {
   const name = document.getElementById('senderName').value.trim();

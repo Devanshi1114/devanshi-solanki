@@ -539,8 +539,7 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   background: var(--ink);
   color: var(--cream);
   padding: 100px 80px;
-  display: flex;
-  flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  text-align: center;
   scroll-margin-top: 80px;
 }
 .footer-cta .section-tag { justify-content: center; color: var(--gold); }
@@ -565,8 +564,6 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
 
 /* ───────── ANIMATIONS ───────── */
 .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
   transition: opacity .6s ease, transform .6s ease;
 }
 .fade-up.visible {
@@ -746,6 +743,16 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
     flex-direction: column;
   }
 
+}
+/* FIX CONTACT SECTION VISIBILITY */
+#contact,
+#contact * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#contact .fade-up {
+  transform: none !important;
 }
 </style>
 </head>
@@ -1264,14 +1271,15 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
 
 <script>
 // Fade-up on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry, i) => {
+//     if (entry.isIntersecting) {
+//       setTimeout(() => entry.target.classList.add('visible'), i * 80);
+//     }
+//   });
+// }, { threshold: 0.1 });
+
+// document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // Animate stat numbers
 function animateNumber(el, target, suffix='') {

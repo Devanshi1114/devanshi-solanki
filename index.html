@@ -541,6 +541,7 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   padding: 100px 80px;
   text-align: center;
   scroll-margin-top: 80px;
+  min-height: 100vh;
 }
 .footer-cta .section-tag { justify-content: center; color: var(--gold); }
 .footer-cta .section-tag::after { background: var(--gold); }
@@ -552,7 +553,13 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   color: var(--cream);
 }
 .footer-title em { font-style: normal; color: var(--accent); }
-.footer-sub { font-size: 16px; color: rgba(245,240,232,.6); max-width: 440px; margin-bottom: 44px; line-height: 1.7; }
+.footer-sub {
+  font-size: 16px;
+  color: rgba(245,240,232,.6);
+  max-width: 440px;
+  margin: 0 auto 44px;
+  line-height: 1.7;
+}
 .footer-contacts {
   display: flex; gap: 48px; margin-top: 60px;
   padding-top: 40px; border-top: 1px solid rgba(255,255,255,.1);
@@ -745,14 +752,31 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
 
 }
 /* FIX CONTACT SECTION VISIBILITY */
+/* CONTACT SECTION FIX */
+.footer-cta {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-sub {
+  margin: 0 auto 44px;
+}
+
 #contact,
 #contact * {
   opacity: 1 !important;
   visibility: visible !important;
 }
-
 #contact .fade-up {
   transform: none !important;
+}
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
 </head>

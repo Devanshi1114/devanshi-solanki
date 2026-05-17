@@ -382,7 +382,7 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
 .tool-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
 
 /* ───────── EXPERIENCE TIMELINE ───────── */
-.experience-section { background: #fff; }
+.experience-section { background: #fff; padding-bottom: 120px; }
 .timeline {
   margin-top: 60px;
   display: flex; flex-direction: column; gap: 0;
@@ -541,7 +541,6 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
   background: var(--ink);
   color: var(--cream);
   padding: 100px 80px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column; align-items: center; justify-content: center; text-align: center;
   scroll-margin-top: 80px;
@@ -600,17 +599,66 @@ section { padding: 100px 80px; scroll-margin-top: 80px; }
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 100px 32px 40px; }
-  .hero-right { padding: 0 32px 60px; }
-  .hero-stats-grid { grid-template-columns: 1fr 1fr; }
-  section { padding: 60px 32px; }
-  .impact-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Hero */
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 100px 24px 40px; }
+  .hero-right { padding: 0 24px 60px; }
+  .hero-stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-card { padding: 20px 16px; }
+  .stat-number { font-size: 36px; }
+  .hero-bg-text { display: none; }
+  .hero-name { font-size: clamp(48px, 12vw, 72px); }
+  .hero-title { font-size: 18px; }
+  .hero-desc { font-size: 14px; }
+  .hero-cta { gap: 10px; }
+  .btn-primary, .btn-outline { padding: 12px 20px; font-size: 12px; }
+
+  /* Sections */
+  section { padding: 60px 24px; }
+
+  /* Impact grid */
+  .impact-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .impact-block { padding: 28px 16px; }
+  .impact-big { font-size: 48px; }
+  .impact-desc { font-size: 11px; }
+
+  /* Platforms */
   .platform-cards { grid-template-columns: 1fr; }
-  .wins-grid { grid-template-columns: 1fr; }
-  .community-grid { grid-template-columns: 1fr; }
+
+  /* Wins */
+  .wins-grid { grid-template-columns: 1fr; gap: 24px; }
+  .win-header { padding: 28px 24px 20px; }
+  .win-metric { font-size: 48px; }
+  .win-body { padding: 20px 24px; }
+
+  /* Community */
+  .community-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Tools */
   .tools-grid { grid-template-columns: 1fr 1fr; }
-  .footer-cta { padding: 60px 32px; }
+
+  /* Timeline */
+  .timeline { padding-left: 24px; }
+
+  /* Contact / Footer */
+  .footer-cta { padding: 60px 24px; min-height: auto; }
+  .footer-title { font-size: clamp(40px, 10vw, 72px); }
+  .contact-field-group { grid-template-columns: 1fr; }
+  .footer-contacts { gap: 24px; }
+
+  /* Ticker */
+  .ticker-item { font-size: 11px; padding: 0 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-grid { grid-template-columns: 1fr 1fr; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .impact-block { padding: 24px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .post-metrics { gap: 16px; }
+  .wins-grid { grid-template-columns: 1fr; }
+  .footer-contacts { flex-direction: column; gap: 16px; align-items: center; }
 }
 </style>
 </head>
